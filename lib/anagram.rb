@@ -1,9 +1,13 @@
 # Your code goes here!
 class Anagram
-  attr_accessor :word
+  attr_accessor :anagram
   
   def initialize (word)  
-    @word = word
+    @anagram = word
   end
-  def match ()
+  def match (word_array)
+    word_array.find_all do |word|
+      word.sort == @anagram.sort
+    end
+  end
 end
